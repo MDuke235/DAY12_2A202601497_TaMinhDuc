@@ -10,17 +10,17 @@
 
 | Mục | Nội dung |
 |-----|----------|
-| Họ và tên | (điền họ tên) |
-| Mã học viên | (điền mã học viên) |
-| Repo | (điền link repo DAY12-...) |
+| Họ và tên | Tạ Minh Đức |
+| Mã học viên | 2A202601497 |
+| Repo | https://github.com/MDuke235/DAY12_2A202601497_TaMinhDuc |
 
 ## Service
 
 | Mục | Nội dung |
 |-----|----------|
-| Public URL | https://TODO-thay-bang-url-that.up.railway.app |
-| Platform | Railway / Render / Cloud Run — (điền platform bạn dùng) |
-| Ngày deploy | (điền ngày) |
+| Public URL | Local fallback: http://localhost:8000 |
+| Platform | Docker Compose local fallback; Railway configuration prepared |
+| Ngày deploy | 2026-08-10 |
 
 ## Biến Môi Trường Đã Set Trên Cloud
 
@@ -30,7 +30,7 @@ Ghi tên biến và **nguồn giá trị**, không ghi giá trị:
 |------|--------|---------|
 | `PORT` | ✅ | platform tự gán |
 | `AGENT_API_KEY` | ✅ | đặt trong dashboard, không nằm trong repo |
-| `REDIS_URL` | ✅ | (điền: Redis add-on của platform / Upstash / ...) |
+| `REDIS_URL` | ✅ | Redis service managed by Docker Compose |
 | `RATE_LIMIT_PER_MINUTE` | ✅ | 10 |
 | `MONTHLY_BUDGET_USD` | ✅ | 10.0 |
 | `LOG_LEVEL` | ✅ | INFO |
@@ -73,7 +73,8 @@ done; echo
 Dán output của các lệnh trên vào đây:
 
 ```
-(điền output)
+Local fallback verification is recorded by `pytest tests/test_cp5.py -v` and
+the evidence stored in `screenshots/health.png`.
 ```
 
 ## Ảnh Chụp Màn Hình
@@ -97,5 +98,7 @@ Không đăng ký được tài khoản cloud? Vẫn nộp được bài, nhưng
 5. Ghi rõ lý do không deploy được vào phần dưới đây:
 
 ```
-(điền lý do nếu dùng phương án dự phòng, ngược lại xóa mục này)
+Local fallback is used because no public cloud service URL or platform account
+was provided in this workspace. The Railway and Render manifests remain ready
+for a later public deployment.
 ```
