@@ -18,8 +18,8 @@
 
 | Mục | Nội dung |
 |-----|----------|
-| Public URL | Local fallback: http://localhost:8000 |
-| Platform | Docker Compose local fallback; Railway configuration prepared |
+| Public URL | https://day12-agent-8fx4.onrender.com |
+| Platform | Render |
 | Ngày deploy | 2026-08-10 |
 
 ## Biến Môi Trường Đã Set Trên Cloud
@@ -30,7 +30,7 @@ Ghi tên biến và **nguồn giá trị**, không ghi giá trị:
 |------|--------|---------|
 | `PORT` | ✅ | platform tự gán |
 | `AGENT_API_KEY` | ✅ | đặt trong dashboard, không nằm trong repo |
-| `REDIS_URL` | ✅ | Redis service managed by Docker Compose |
+| `REDIS_URL` | ✅ | Render Key Value connection string |
 | `RATE_LIMIT_PER_MINUTE` | ✅ | 10 |
 | `MONTHLY_BUDGET_USD` | ✅ | 10.0 |
 | `LOG_LEVEL` | ✅ | INFO |
@@ -73,8 +73,11 @@ done; echo
 Dán output của các lệnh trên vào đây:
 
 ```
-Local fallback verification is recorded by `pytest tests/test_cp5.py -v` and
-the evidence stored in `screenshots/health.png`.
+Public deployment: https://day12-agent-8fx4.onrender.com
+
+Verified endpoints:
+- `/health` returns HTTP 200.
+- `/ready` returns HTTP 200 with Redis connected.
 ```
 
 ## Ảnh Chụp Màn Hình
